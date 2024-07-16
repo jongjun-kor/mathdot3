@@ -121,6 +121,13 @@
             background-color: rgba(52, 152, 219, 0.5);
             transform-origin: left center;
         }
+        .optimal-path-line {
+            position: absolute;
+            height: 2px;
+            background-color: red;
+            transform-origin: left center;
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
@@ -128,6 +135,7 @@
         <div id="gameContainer"></div>
         <div id="controls">
             <button onclick="startGame()">게임 시작</button>
+            <button onclick="showOptimalPath()">인공지능최적길</button>
             <div id="gameInfo">
                 <p id="timer">시간: 0.00초</p>
                 <p id="remainingPoints">남은 점: 8개</p>
@@ -156,6 +164,7 @@
         let lastProcessedCommand = '';
         let lastCommandTime = 0;
         let interimCommand = '';
+        let optimalPath = [];
 
         function createGrid() {
             gameContainer.innerHTML = '';
@@ -389,8 +398,3 @@
             const commandItem = document.createElement('li');
             commandItem.textContent = `${commandIndex++}. ${command}`;
             commandListElement.appendChild(commandItem);
-            commandListElement.scrollTop = commandListElement.scrollHeight;
-        }
-    </script>
-</body>
-</html>
