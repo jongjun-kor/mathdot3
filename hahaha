@@ -397,4 +397,4 @@
         function addCommandToHistory(command) {
             const commandItem = document.createElement('li');
             commandItem.textContent = `${commandIndex++}. ${command}`;
-            commandListElement.appendChild(commandItem);
+            commandListElement.appendChild(commandItem);​​​​​​​​​​​​​​​​
